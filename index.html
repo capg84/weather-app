@@ -25,30 +25,30 @@
     <title>Live Weather</title>
 </head>
 <body>
-    <header>
+    <header class="text-primary">
         <h1>Live Weather Dashboard</h1>
     </header>
     
-    <div class="container">
+    <div class="container-xxl">
         <div class="row">
             <div class="col-3">
                 <h2>Search a city</h2>
                 <form>
                     <div class="form-group">
                       <input type="text" class="form-control" id="cityName" placeholder="Enter city name">
-                      <small id="cityName" class="form-text text-muted">Search by one city name at a time.</small>
+                      <small id="cityName" class="form-text text-muted">Search one city name at a time.</small>
                     </div>
                     <button type="button" id="searchBtn" class="btn btn-primary">Search</button>
                 </form>
                 <hr>
-                <h4>Search history</h4>
+                <h4 class="list-group" id="lgTitle">Search history</h4>
                 <ul id="searchHistory" class="list-group">
                     <!-- append li here li class="list-group-item"-->
                 </ul>
             </div>
             <div id="weatherContent" class="col-9">
                 <div class="row pb-3 mr-2 ml-2">
-                    <div id="cityDetail" class="col-12 border rounded px-3 py-3">
+                    <div id="cityDetail" class="col-12 border rounded px-3 py-3 bg-primary text-light">
                         <!-- display currentCity here text with p-->
                     </div>
                 </div>

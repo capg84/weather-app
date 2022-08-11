@@ -9,6 +9,7 @@ var cityLon = 0;
 
 
 function getWeatherApi() {
+  
 
   // get the lat and lon
   var cityName = city.value;
@@ -43,6 +44,9 @@ function getWeatherApi() {
 
     console.log(data[0].lat);
     console.log(data[0].lon);
+
+    $(".list-group").css("display", 'block');
+    $("#weatherContent").css("display", 'block');
 
     cityLat = data[0].lat;
     cityLon = data[0].lon;
@@ -155,3 +159,5 @@ $(document).on("click", ".list-group-item", function() {
   city.value = listCity;
   getWeatherApi();
 });
+
+
