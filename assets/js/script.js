@@ -6,10 +6,7 @@ var city = document.getElementById('cityName');
 var cityLat = 0;
 var cityLon = 0;
 
-
-
 function getWeatherApi() {
-  
 
   // get the lat and lon
   var cityName = city.value;
@@ -31,19 +28,17 @@ function getWeatherApi() {
         };
       };
 
-    //  console.log(searchHistoryList);
-
   var cityCordRequestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+cityName+'&limit=5&appid='+apiKey;
 
-   console.log(cityCordRequestUrl);
+  //  console.log(cityCordRequestUrl);
 
   fetch(cityCordRequestUrl)
     .then(response => response.json())
     .then(data=> { 
-    console.log(data); 
+    // console.log(data); 
 
-    console.log(data[0].lat);
-    console.log(data[0].lon);
+    // console.log(data[0].lat);
+    // console.log(data[0].lon);
 
     $(".list-group").css("display", 'block');
     $("#weatherContent").css("display", 'block');
@@ -54,29 +49,26 @@ function getWeatherApi() {
     // get the current weather
     var weatherApiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cityLon+'&exclude=hourly,daily,minutely&units=metric&appid='+apiKey;
 
-    // console.log(weatherApiUrl);
-
     fetch(weatherApiUrl)
       .then(response => response.json())
       .then(data=> { 
-      console.log(data);
-      console.log(data.current.temp);
+
+      var currentDateEl = dayjs.unix(data.current.dt).format('DD/MM/YYYY');
 
       $("#cityDetail").empty();
 
       var currentIconUrl = "http://openweathermap.org/img/w/"+data.current.weather[0].icon+".png";
 
-      console.log(currentIconUrl);
+      // console.log(currentIconUrl);
 
             var currentCity = $(`
             <h3 id="currentCity">
-                ${cityName} ${today} 
+                ${cityName} ${currentDateEl} 
             </h3>
             <p><img src="${currentIconUrl}" alt="${data.current.weather[0].description}"/></p>
             <p>Temperature: ${data.current.temp} °C</p>
             <p>Humidity: ${data.current.humidity}\%</p>
             <p>Wind Speed: ${data.current.wind_speed} m/s</p>
-            
         `);
 
         $("#cityDetail").append(currentCity);
@@ -90,6 +82,7 @@ function getWeatherApi() {
 
         $("#cityDetail").append(uvIndexP);
 
+        // adding color code to UV index
         if (uvIndex >= 0 && uvIndex <= 2) {
           $("#uvIndexColor").css("background-color", "#3EA72D").css("color", "white");
       } else if (uvIndex > 2 && uvIndex <= 7) {
@@ -111,7 +104,7 @@ function fiveDayForecast(){
   fetch(forecastApiUrl)
     .then(response => response.json())
     .then(data=> { 
-    console.log(data);
+    // console.log(data);
 
     $("#fiveDay").empty();
 
@@ -141,9 +134,9 @@ function fiveDayForecast(){
       $("#fiveDay").append(forecastCard);
     };
 
-    console.log(cityInfo);
+    // console.log(cityInfo);
 
-    console.log(forecastIconUrl);
+    // console.log(forecastIconUrl);
 
     });
   };
