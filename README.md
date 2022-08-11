@@ -42,17 +42,12 @@ The scheduler is designed and developed using the following:
 * Server-side API - [OpeaWeather API](https://openweathermap.org/api/one-call-api)
 
 ## Screenshots
-The scheduler shall look like the following screenshot.
+The weather dashboard shall look like the following screenshot.
 
 ![this image](/assets/images/liveWeatherDashboardScreenshot.png)
 
 ## Favicon
-This favicon was generated using the following graphics from Twitter Twemoji:
-
-- Graphics Title: 1f4c5.svg
-- Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
-- Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c5.svg
-- Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+This favicon was generated  by iconixar - Flaticon
 
 -------
 
